@@ -1,0 +1,65 @@
+{% extends "./views/layout.html" %}
+
+{% block content %}
+<style>
+  body {
+    background-color: skyblue;
+  }
+
+  form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -200px;
+    margin-left: -200px;
+    display: block;
+    background-color: whitesmoke;
+    width: 400px;
+    height: 400px;
+    border-radius: 25px;
+    text-align: center;
+    padding: 5px 40px;
+    box-sizing: border-box;
+  }
+
+  p {
+    font-size: 42px;
+    font-weight: 600;
+  }
+
+  input {
+    background-color: whitesmoke;
+    width: 200px;
+    height: 48px;
+    margin-bottom: 10px;
+    border: none;
+    border-bottom: 2px solid silver;
+    outline: none;
+    font-size: 22px;
+  }
+
+
+  .btn {
+    background-color: #59c2c2;
+    width: 38%;
+    height: 48px;
+    border-radius: 8px;
+    margin-top: 40px;
+    font-size: 28px;
+    font-weight: 600;
+    color: white;
+  }
+
+  .btn:hover {
+    background-color: #59c2a0;
+  }
+</style>
+
+<form action="/login" method="post">
+  <p>login</p>
+  <input type="text" name="username">
+  <input type="password" name="password">
+  <input type="submit" value="登  陆" class="btn">
+</form>
+
+{% endblock %}

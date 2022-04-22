@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>金属档案</title>
+  <style>
+    .list {
+      background-color: rgb(249, 211, 201);
+      width: 600px;
+      height: 40px;
+      line-height: 40px;
+      margin: 30px auto;
+      border-radius: 20px;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    a {
+      font-family: "楷体";
+      color: orangered;
+      text-decoration: none;
+      font-size: 26px;
+      font-weight: bold;
+      transition: all 0.5s;
+      width: 200px;
+      border-radius: 20px;
+      text-align: center;
+    }
+
+    a:hover {
+      background-color: orangered;
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="list">
+    <a href="/">首页</a>
+    <a href="/login">登陆</a>
+    <a href="/list">抽奖页</a>
+  </div>
+  {% block content %}
+  {% endblock %}
+</body>
+
+</html>

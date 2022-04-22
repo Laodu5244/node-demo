@@ -1,0 +1,84 @@
+{% extends "./views/layout.html" %}
+
+{% block content %}
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background: #999;
+  }
+
+  #login {
+    width: 450px;
+    margin: 0 auto;
+  }
+
+  #fa {
+    width: 449px;
+    height: 450px;
+    border: 1px solid #222;
+    margin: 30px auto;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  #fa>div {
+    width: 149px;
+    height: 150px;
+    border: 1px solid #222;
+    line-height: 150px;
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+
+  }
+
+  #start {
+    cursor: pointer;
+    background: pink;
+  }
+</style>
+<div id="login">
+  <h3>本页面登陆后可见 <a href="/logout">注销登陆</a></h3>
+
+</div>
+<div id="fa">
+  <div class="option">苍井老师</div>
+  <div class="option">波多老师</div>
+  <div class="option">武藤老师</div>
+  <div class="option">饭岛老师</div>
+  <div id="start">开始抽奖</div>
+  <div class="option">龙泽老师</div>
+  <div class="option">友田老师</div>
+  <div class="option">小泽老师</div>
+  <div class="option">樱井老师</div>
+</div>
+
+
+<script>
+  let start = document.querySelector("#start");
+  let options = document.querySelectorAll(".option");
+  let timer = null;
+  start.onclick = function () {
+    let num = 0;
+    if (timer == null) {
+      timer = setInterval(() => {
+        num++;
+        let ran = Math.floor(Math.random() * (8 - 0) + 0);
+        for (let i = 0; i < options.length; i++) {
+          options[i].style.backgroundColor = "#999";
+        }
+        options[ran].style.backgroundColor = "orange";
+        if (num >= 50) {
+          clearInterval(timer);
+          timer = null;
+        }
+      }, 50);
+    }
+  }
+</script>
+{% endblock %}
